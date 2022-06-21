@@ -1,0 +1,31 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+  <model name="esfera">
+    <pose>0 0 0.5 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <sphere radius="1.0"/>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <sphere radius="1.0"/>
+        </geometry>
+        <material> <!-- Sphere material -->
+          <ambient>1 1 0 1</ambient>
+          <diffuse>1 1 0 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material> <!-- End Sphere material -->
+      </visual>
+    </link>
+	<plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+		<commandTopic>cmd_vel</commandTopic>
+		<odometryTopic>odom</odometryTopic>
+		<odometryFrame>odom</odometryFrame>
+		<odometryRate>20.0</odometryRate>
+		<robotBaseFrame>base_footprint</robotBaseFrame>
+	</plugin>
+  </model>
+</sdf>
