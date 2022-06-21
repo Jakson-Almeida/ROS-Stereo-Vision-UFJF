@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<launch>
+<!--  world respawn-->
+    <include file="$(find tennis)/launch/world.launch" >
+        <arg name="gui" value="true"/>
+        <arg name="headless" value="false"/>
+        <arg name="world_name" value="$(find tennis)/worlds/empty.world" />
+    </include>
+
+
+<!-- models respawn-->
+    <node name="esfera" pkg="gazebo_ros" type="spawn_model"
+          args="-file /$(find tennis)/models/esfera/model.sdf
+                -sdf
+				-model esfera
+ 	      		-x 0 -y 5 -z 0.5
+                -R 0 -P 0 -Y 0"/>
+                
+     <node name="my_ground_plane" pkg="gazebo_ros" type="spawn_model"
+          args="-file /$(find tennis)/models/my_ground_plane/model.sdf
+                -sdf
+				-model my_ground_plane
+ 	      		-x -0 -y 0 -z 0
+                -R 0 -P 0 -Y 0"/>
+                
+     <node name="camera0" pkg="gazebo_ros" type="spawn_model"
+          args="-file /$(find tennis)/models/fpv_cam/fpv_cam.sdf
+                -sdf
+				-model camera0
+ 	      		-x -0.5 -y 0 -z 1
+                -R 0 -P 0 -Y 1.57"/>
+                
+     <node name="camera1" pkg="gazebo_ros" type="spawn_model"
+          args="-file /$(find tennis)/models/fpv_cam/fpv_cam.sdf
+                -sdf
+				-model camera1
+ 	      		-x 0.5 -y 0 -z 1
+                -R 0 -P 0 -Y 1.57"/>
+</launch>
+
+

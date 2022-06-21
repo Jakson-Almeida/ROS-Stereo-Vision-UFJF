@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<launch>
+<!--  world respawn-->
+    <include file="$(find tennis)/launch/world.launch" >
+        <arg name="gui" value="true"/>
+        <arg name="headless" value="false"/>
+        <arg name="world_name" value="$(find tennis)/worlds/walk.world" />
+    </include>
+
+
+<!-- models respawn-->
+    <node name="tenis" pkg="gazebo_ros" type="spawn_model"
+          args="-file /$(find tennis)/models/tenis/model.sdf
+                -sdf
+		-model tenis
+ 	      -x 7.37 -y -0 -z 0
+              -R 0 -P 0 -Y 0"/>
+</launch>
+
+

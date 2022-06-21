@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<launch>
+<!--  world respawn-->
+    <include file="$(find aulagazebo)/launch/world.launch" >
+        <arg name="gui" value="true"/>
+        <arg name="headless" value="false"/>
+        <arg name="world_name" value="$(find aulagazebo)/worlds/empty.world" />
+    </include>    
+
+
+<!-- models respawn-->
+    <node name="spawn_robot" pkg="gazebo_ros" type="spawn_model"
+          args="-file /$(find aulagazebo)/models/my_robot/model.sdf
+                -sdf
+		-model my_robot
+ 	      -x 0 -y 0 -z 0
+              -R 0 -P 0 -Y 0"/>
+
+</launch>
+
+
