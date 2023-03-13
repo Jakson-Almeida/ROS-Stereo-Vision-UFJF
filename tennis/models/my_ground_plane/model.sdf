@@ -1,12 +1,13 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
   <model name="my_ground_plane">
+	<pose>0 5 0 0 0 1.57</pose>
     <static>true</static>
     <link name="link">
       <collision name="collision">
         <geometry>
           <box>
-            <size>2.5 2.5 .03</size>
+            <size>10 10 .03</size>
           </box>
         </geometry>
       </collision>
@@ -14,7 +15,7 @@
         <cast_shadows>false</cast_shadows>
         <geometry>
           <box>
-            <size>2.5 2.5 .03</size>
+            <size>10 10 .03</size>
           </box>
         </geometry>
         <material>

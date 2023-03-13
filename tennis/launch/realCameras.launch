@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- Incluir outro roslaunch -->
+  <include file="$(find openni2_launch)/launch/openni2.launch">
+    <!-- arg name="arg1" value="valor1" /-->
+  </include>
+  <node name="RealStereoVision" pkg="tennis" type="RealStereoVision.py" args="$(find tennis)/scripts/RealStereoVision.py"/>
+  <node name="StereoVisionCam.py" pkg="tennis" type="StereoVisionCam2Colors.py" args="$(find tennis)/scripts/StereoVisionCam2Colors.py"/>
+  <node name="grafico3D" pkg="tennis" type="full3DGraph.py" args="$(find tennis)/scripts/full3DGraph.py"/>
+	<!-- node name="printer" pkg="tennis" type="printer.py" args="$(find tennis)/scripts/printer.py"/ -->
+</launch>

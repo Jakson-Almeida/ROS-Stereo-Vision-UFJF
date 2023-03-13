@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+<!-- models respawn-->
+	<node name="RealStereoVision" pkg="tennis" type="scripts/RealStereoVision.py">
+	</node>
+</launch>
+
+
