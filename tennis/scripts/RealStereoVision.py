@@ -22,15 +22,16 @@ class Nodo:
 
 	def stereo(self):
 		camOn = False
-		v0 = VideoStream(0).start()
+		# v0 = VideoStream(0).start()
 		v1 = VideoStream(2).start()
+		v0 = v1
 		time.sleep(2.0)
 		rospy.loginfo("Publicando imagens webcam 0 e 1")
 		while not rospy.is_shutdown():
 			fr0 = v0.read()
 			fr1 = v1.read()
-			fr0 = imutils.resize(fr0, width=600)
-			fr1 = imutils.resize(fr1, width=600)
+			# fr0 = imutils.resize(fr0, width=600)
+			# fr1 = imutils.resize(fr1, width=600)
 			if fr0 is not None:
 				image0 = self.br.cv2_to_imgmsg(fr0)
 				if image0 is not None:
@@ -48,10 +49,10 @@ class Nodo:
 			# rospy.loginfo(cont)
 			# cv2.imshow('camera 0', self.image0)
 			# self.loop_rate.sleep()
-			key = cv2.waitKey(1) & 0xFF
+			# key = cv2.waitKey(1) & 0xFF
 			# if the 'q' key is pressed, stop the loop
-			if key == ord("q"):
-				break
+			# if key == ord("q"):
+			# 	break
 		cv2.destroyAllWindows()
 
 if __name__ == '__main__':

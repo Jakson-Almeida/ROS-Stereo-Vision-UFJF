@@ -2,6 +2,7 @@ from scipy.interpolate import interp1d
 import numpy as np
 import matplotlib.pyplot as plt
 
+t = np.linspace(0, 10, num=11, endpoint=True)
 x = np.linspace(0, 10, num=11, endpoint=True)
 y = np.cos(-x**2/9.0)
 z = np.sin(-x**2/9.0)
