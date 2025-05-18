@@ -1,5 +1,5 @@
 # ROS Stereo Vision
-## Pacote ROS "tennis"
+## Pacote ROS ~tennis~
 
 Detecção em tempo real da posição 3D da bola de tênis por meio de Visão Estéreo.
 
